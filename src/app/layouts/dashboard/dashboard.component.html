@@ -1,0 +1,56 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <p class="coderCasa">CoderCasa</p>
+        @if (showFiller) {
+        <p>
+            Carga de alumnos
+        </p>
+        }
+        <div>
+            <button (click)="showFiller = !showFiller" mat-raised-button class="btnDocente">
+                PROFESORES
+            </button>
+        </div>
+
+        @if (showFiller) {
+        <p>
+            Inscripcion a Materias
+        </p>    
+        }
+        <div>
+            <button (click)="showFiller = !showFiller" mat-raised-button class="btnAlumno">
+                ALUMNOS
+            </button>
+        </div>
+    </mat-drawer>
+    <!--SIDEBAR-->
+
+    <!--CONTENIDO A LA DERECHA DEL SIDEBAR-->
+    <div class="example-sidenav-content">
+        <!--TOOLBAR SUPERIOR-->
+        <mat-toolbar color="warn">
+            <button (click)="drawer.toggle()" mat-icon-button class="example-icon"
+                aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span><img src="https://comparte-entity-photos.s3.us-east-2.amazonaws.com/39144702-7af9-45a6-8e18-3eb28648fa8a.png" alt=""></span>
+        </mat-toolbar>
+        <!--TOOLBAR SUPERIOR-->
+
+        <!--<button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+    </button>-->
+    <main style="padding: 1rem;">
+        <app-users></app-users>
+
+        
+    </main>
+    </div>
+    <!--contenido a la derecha del sidebar-->
+
+</mat-drawer-container>
+
+
+
+
+<p>dashboard works!</p>
